@@ -4,14 +4,15 @@ using System.Text;
 
 namespace EmployeeWage
 {
-    class CompanyEmpWage
+    public class CompanyEmpWage
     {
         public string company;
         public int empRatePerHour;
         public int numOfWorkingDays;
         public int maxHoursPerMonth;
         public int totalEmpWage;
-
+        public int dailyWage;
+        public int TotalWageAlongWithDailyWage;
         public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             this.company = company;
@@ -27,7 +28,7 @@ namespace EmployeeWage
 
         public string toString()
         {
-            return "Total Emp Wage for Company : " + this.company + "is :" + this.totalEmpWage;
+            return "\n Total Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage + "\n Daily Wage for Company : " + this.company + " is :" + this.dailyWage + "\n Total  Emp wage along with daily Wage is " + this.TotalWageAlongWithDailyWage;
         }
     }
 }

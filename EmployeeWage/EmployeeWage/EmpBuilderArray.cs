@@ -38,7 +38,6 @@ namespace EmployeeWage
             {
                 totalWorkingDays++;
                 Random random = new Random();
-                //Computation
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
                 {
@@ -55,6 +54,8 @@ namespace EmployeeWage
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Day : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
+            companyEmpWage.dailyWage = empHrs * companyEmpWage.empRatePerHour;
+            companyEmpWage.TotalWageAlongWithDailyWage = totalEmpHrs * companyEmpWage.empRatePerHour + companyEmpWage.dailyWage;
             return totalEmpHrs * companyEmpWage.empRatePerHour;
 
         }
