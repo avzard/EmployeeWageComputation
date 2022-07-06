@@ -14,13 +14,14 @@ namespace EmployeeWage
         {
 
             Console.WriteLine("Welcome To Employee Wage Computation");
-            Console.WriteLine("Total Emplyee Monthly Wages : " + TotalWages());
+            MultipleCompnies("Dmart", 20, 2, 10);
+            MultipleCompnies("Reliance", 20, 4, 10);
 
         }
-        public static int TotalWages()
+        public static void MultipleCompnies(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursMonth)
         {
             int empHrs = 0, totalEmpHours = 0, totalWorkingDays = 0;
-            while (totalEmpHours <= MAX_HOUR_IN_MONTH && totalWorkingDays <= NUM_OF_WORKING_DAYS)
+            while (totalEmpHours <= maxHoursMonth && totalWorkingDays <= numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -38,9 +39,9 @@ namespace EmployeeWage
                         break;
                 }
                 totalEmpHours += empHrs;
-                Console.WriteLine("Days : " + totalWorkingDays + "Emp Hrs : " + empHrs);
             }
-            return totalEmpHours * EMP_RATE_PER_HOUR;
+            int totalEmpWages = totalEmpHours * EMP_RATE_PER_HOUR;
+            Console.WriteLine($"Total Empwages For Compny :{company} is {totalEmpWages}");
         }
     }
 }
