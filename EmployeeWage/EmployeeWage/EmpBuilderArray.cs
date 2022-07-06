@@ -6,6 +6,7 @@ namespace EmployeeWage
 {
     public class EmpBuilderArray : IComputeEmpWage
     {
+        //Constants
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
@@ -16,13 +17,17 @@ namespace EmployeeWage
         {
             this.companyEmpWaeList = new LinkedList<CompanyEmpWage>();
             this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();
+
         }
+
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             this.companyEmpWaeList.AddLast(companyEmpWage);
             this.companyToEmpWageMap.Add(company, companyEmpWage);
+
         }
+
         public void computeEmpWage()
         {
             foreach (CompanyEmpWage companyEmpWage in this.companyEmpWaeList)
@@ -31,13 +36,17 @@ namespace EmployeeWage
                 Console.WriteLine(companyEmpWage.toString());
             }
         }
+
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
+
         {
+            //Variables
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
             while (totalEmpHrs <= companyEmpWage.maxHoursPerMonth && totalWorkingDays < companyEmpWage.numOfWorkingDays)
             {
                 totalWorkingDays++;
                 Random random = new Random();
+                //Computation
                 int empCheck = random.Next(0, 3);
                 switch (empCheck)
                 {
@@ -59,6 +68,7 @@ namespace EmployeeWage
             return totalEmpHrs * companyEmpWage.empRatePerHour;
 
         }
+
         public int getTotalWage(string company)
         {
             return this.companyToEmpWageMap[company].totalEmpWage;

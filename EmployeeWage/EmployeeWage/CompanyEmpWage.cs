@@ -28,7 +28,7 @@ namespace EmployeeWage
 
         public string toString()
         {
-            return "\n Total Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage + "\n Daily Wage for Company : " + this.company + " is :" + this.dailyWage + "\n Total  Emp wage along with daily Wage is " + this.TotalWageAlongWithDailyWage;
+            return "\n\n Total Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage + "\n\n Daily Wage for Company : " + this.company + " is :" + this.dailyWage + "\n\n Total  Emp wage along with daily Wage is " + this.TotalWageAlongWithDailyWage;
         }
     }
 }
