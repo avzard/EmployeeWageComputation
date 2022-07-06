@@ -6,14 +6,19 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            int IS_FULLTIME = 1;
+            int IS_PART_TIME = 1;
+            int IS_FULL_TIME = 2;
             int EMP_RATE_PER_HOUR = 20;
             int empHrs = 0;
             int empWages = 0;
-            Random rand = new Random();
-            int empChek = rand.Next(1, 3);
             Console.WriteLine("Welcome To Employee Wage Computation");
-            if (empChek == IS_FULLTIME)
+            Random random = new Random();
+            int empCheck = random.Next(0, 3);
+            if (empCheck == IS_PART_TIME)
+            {
+                empHrs = 4;
+            }
+            else if (empCheck == IS_FULL_TIME)
             {
                 empHrs = 8;
             }
@@ -22,7 +27,7 @@ namespace EmployeeWage
                 empHrs = 0;
             }
             empWages = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine("Total_Employee_Wages : " + empWages);
+            Console.WriteLine("Emp Wages : " + empWages);
         }
     }
 }
